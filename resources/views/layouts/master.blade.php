@@ -124,7 +124,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
                 <div class="icon"><img src="{{asset('logo/icons8-user-100.png')}}" alt="" srcset=""></div>
-                <h4 class="title"><a href="" class="stretched-link"> دورات التدريس</a></h4>
+                <h4 class="title"><a href="" class="stretched-link"> دورات تدريس</a></h4>
               </div>
             </div><!--End Icon Box -->
 
@@ -208,8 +208,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>تقييم الأسعار</h2>
+        <p>من الضروري أن تحصل على وقت كافٍ للتدريب الذي يجعلك مميزًا</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="zoom-in" data-aos-delay="100">
@@ -218,7 +218,7 @@
 
           <div class="col-lg-4">
             <div class="pricing-item">
-              <h3>Free Plan</h3>
+              <h3>عمل حر</h3>
               <div class="icon">
                 <i class="bi bi-box"></i>
               </div>
@@ -236,7 +236,7 @@
 
           <div class="col-lg-4">
             <div class="pricing-item featured">
-              <h3>Business Plan</h3>
+              <h3>خطة عمل جيدة لاستكمال المشاريع</h3>
               <div class="icon">
                 <i class="bi bi-rocket"></i>
               </div>
@@ -255,7 +255,7 @@
 
           <div class="col-lg-4">
             <div class="pricing-item">
-              <h3>Developer Plan</h3>
+              <h3>الحركات التي تجعلك مطور برامج</h3>
               <div class="icon">
                 <i class="bi bi-send"></i>
               </div>
@@ -299,9 +299,9 @@
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
+          <h4>صفحات الويب</h4>
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="#">الرئيسية</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Terms of service</a></li>
@@ -310,23 +310,26 @@
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
+          <h4>خدماتنا</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#">تصميم موقع PHP</a></li>
+            <li><a href="#">تطوير الموقع PHP</a></li>
+            <li><a href="#">تصميم واجهة  Flutter</a></li>
+            <li><a href="#">إدارة حالة Flutter</a></li>
+            <li><a href="#">هندسة  النظيفة Flutter API</a></li>
+            <li><a href="#">PHP  Json</a></li>
+            <li><a href="#">PHP  Data Mysql</a></li>
+            <li><a href="#">Flutter  Data Firebase</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <h4>اتصل بنا</h4>
+          <p>ليبيا</p>
+          <p>المدينه : جالو</p>
+          <p>عنوان : خلف سوق العرب</p>
+          <p class="mt-4"><strong>هاتف :</strong> <span>4890054 93 218+</span></p>
+          <p><strong>بريد إلكتروني :</strong> <span> hnarfr20063@example.com</span></p>
         </div>
 
       </div>
