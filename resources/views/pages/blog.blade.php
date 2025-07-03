@@ -1,5 +1,9 @@
 <x-layout>
-
+ <x-slot name="header">
+    <x-basis.navbar>
+      
+    </x-basis.navbar>
+    </x-slot>
   <!-- Page Title -->
     <div class="page-title">
       <div class="heading">

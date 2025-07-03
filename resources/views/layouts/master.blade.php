@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  dir="{{ LaravelLocalization::getCurrentLocale() === 'ar' ? 'rtl' : 'ltr' }}">
+  <!--  -->
 
 <head>
   <meta charset="utf-8">
@@ -33,23 +34,13 @@
  
 @stack('style')
 </head>
-
 <body class="index-page" >
   <header id="header" class="header fixed-top">
-
-   
-    
-    <!-- End Top Bar -->
-       <x-basis.navbar>
-       </x-basis.navbar>
-      
+      {{ $header ?? '' }}
   </header>
   <main class="main">
-    <!-- Hero Section -->
     {{$slot}}
   </main>
-
-
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

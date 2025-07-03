@@ -1,4 +1,6 @@
-
+<x-layout>
+      <x-slot name="header">
+ 
 <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
@@ -19,9 +21,9 @@
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="{{asset('logo/icons8-libya-48.png')}}" alt="">
+          <img src="{{asset('logo/icons8-flutter-logo-96.png')}}" alt="">
           <h1 class="sitename"> 
-          {{__('messages.Study')}}
+        Flutter
         </h1>
           <span>.</span>
         </a> 
@@ -48,3 +50,6 @@
 
         </div>
     </div>
+
+    </x-slot>
+</x-layout>

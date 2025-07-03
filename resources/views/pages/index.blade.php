@@ -1,4 +1,9 @@
 <x-layout>
+   <x-slot name="header">
+    <x-basis.navbar>
+      
+    </x-basis.navbar>
+    </x-slot>
     <section id="hero" class="hero section accent-background"> 
 
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
@@ -26,7 +31,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
                 <div class="icon" ><img src="{{asset('logo/icons8-flutter-logo-96.png')}}" alt="" srcset=""></div>
-                <h4 class="title"><a href="" class="stretched-link">Flutter</a></h4>
+                <h4 class="title"><a href="{{url('flutter')}}" class="stretched-link">Flutter</a></h4>
               </div>
             </div>
             
@@ -35,7 +40,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
                 <div class="icon"><img src="{{asset('logo/icons8-laravel-96.png')}}" alt="" srcset=""></div>
-                <h4 class="title"><a href="" class="stretched-link">Laravel</a></h4>
+                <h4 class="title"><a href="{{url('laravel')}}" class="stretched-link">Laravel</a></h4>
               </div>
             </div>
             
@@ -44,7 +49,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
                 <div class="icon"><img src="{{asset('logo/icons8-dart-96.png')}}" alt="" srcset=""></div>
-                <h4 class="title"><a href="" class="stretched-link">Dart</a></h4>
+                <h4 class="title"><a href="{{url('dart')}}" class="stretched-link">Dart</a></h4>
               </div>
             </div>
             
@@ -53,7 +58,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
                 <div class="icon"><img src="{{asset('logo/icons8-user-100.png')}}" alt="" srcset=""></div>
-                <h4 class="title"><a href="#" class="stretched-link"> {{__('messages.Teaching')}}</a></h4>
+                <h4 class="title"><a href="{{url('login')}}" class="stretched-link"> {{__('messages.Teaching')}}</a></h4>
               </div>
             </div>
             
