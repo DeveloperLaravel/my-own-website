@@ -12,10 +12,10 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
     function () {
-      Route::view('/', 'index');
-Route::view('about', 'about');
-Route::view('portfolio', 'portfolio');
-Route::view('blog', 'blog');
+      Route::view('/', 'pages.index');
+Route::view('about', 'pages.about');
+Route::view('portfolio', 'pages.portfolio');
+Route::view('blog', 'pages.blog');
 
     }
 );
