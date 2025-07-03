@@ -20,24 +20,26 @@
         <a href="index.html" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <img src="{{asset('logo/icons8-libya-48.png')}}" alt="">
-          <h1 class="sitename"> مواقع الدراسة</h1>
+          <h1 class="sitename"> {{__('messages.Study')}}</h1>
           <span>.</span>
         </a> 
  
  <nav id="navmenu" class="navmenu">
           <ul>
-             <li class="dropdown"><a href="#"><span> لغة</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+             <li class="dropdown"><a href="#"><span> {{ __('messages.language')}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="">عربى</a></li>
-                <li><a href="#">انجليزى</a></li>
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                <li><a rel="alternate"  hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">  {{ $properties['native'] }}</a></li>
+                    @endforeach
+                <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
               </ul>
             </li>
-            <li><a href="{{url('/')}}" class="active">الرئيسية<br></a></li>
-            <li><a href="{{url('about')}}" class="{{ request()->is('about') ? 'active' : '' }}">فريق العمل</a></li>
-            <li><a href="{{url('portfolio')}}">مدير المحفظة</a></li>
-            <li><a href="{{url('blog')}}">مدونة يومية</a></li>
+            <li><a href="{{url('/')}}" class="active">{{ __('messages.Home')}}<br></a></li>
+            <li><a href="{{url('about')}}" class="{{ request()->is('about') ? 'active' : '' }}">{{__('messages.Work team')}}</a></li>
+            <li><a href="{{url('portfolio')}}">{{__('messages.Portfolio Manager')}}</a></li>
+            <li><a href="{{url('blog')}}"> {{__('messages.Daily blog')}}</a></li>
            
-            <li><a href="#contact">محتو1ى</a></li>
+            <li><a href="#contact">{{__('messages.content')}}</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
