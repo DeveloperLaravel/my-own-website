@@ -20,8 +20,21 @@ class AuthController extends Controller
         
          $req->validate(['name'=>'required','email'=>'required|email|unique:users','password'=>'required|min:6']);
         $user = User::create(['name'=>$req->name,'email'=>$req->email,'password'=>bcrypt($req->password)]);
-        $user->token = $user->createToken('api')->plainTextToken;
-        return redirect()->route('home',['User' => $user]);
+        // $user->token = $user->createToken('api')->plainTextToken;
+           $token = $user->createToken('api')->plainTextToken;
+    // لو كان طلب API (مثلاً من Postman أو Flutter)
+    if ($req->wantsJson()) {
+        return response()->json([
+            'user' => $user,
+            'token' => $token
+        ], 201);
+    }
+
+    // لو كان طلب Web (مثلاً من الفورم)
+    $req->session()->regenerate();
+    Auth::login($user);
+
+    return redirect()->route('home');
     }
     /**
      * Store a newly created resource in storage.
