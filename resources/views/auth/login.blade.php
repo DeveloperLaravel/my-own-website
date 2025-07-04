@@ -41,7 +41,7 @@
     <div style="color:red">@foreach ($errors->all() as $e)<p>{{ $e }}</p>@endforeach</div>
 @endif
         </div>
-        <form method="POST" action="{{route('login')}}" class="p-3 mt-3">
+        <form method="post" action="{{route('login')}}" class="p-3 mt-3">
                     @csrf
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user p-2"></span>

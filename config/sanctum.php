@@ -46,6 +46,7 @@ return [
     | "expires_at" attribute, but first-party sessions are not affected.
     |
     */
+'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', ',127.0.0.1:8000')),
 
     'expiration' => null,
 

@@ -4,7 +4,7 @@
 <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:hnarfr20063@gmail.com">{{$user->email}}</a></i>
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:hnarfr20063@gmail.com">email</a></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
           <a href="https://github.com/DeveloperLaravel/" class="github"><i class="bi bi-github"></i></a>
@@ -39,7 +39,7 @@
             </li>
               
 
-             <li class="dropdown"><a href="#"><span> {{ $user->name}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+             <li class="dropdown"><a href="#"><span> {{ auth()->user()->name}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a rel="alternate"  hreflang="#" href="#"> </a></li>
                 <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
@@ -59,10 +59,11 @@
 
               <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-outline-warning ">
     <i class="bi bi-box-arrow-right"></i> {{ __('messages.Logout') }}
-         <form id="logout-form" action="{{ route('home') }}" method="POST" style="display: none;">
+     
+</a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
     @csrf
 </form>
-</a>
            
                 </li>
            

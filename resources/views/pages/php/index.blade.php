@@ -38,18 +38,55 @@
                 <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
               </ul>
             </li>
-            <li><a href="{{url('/')}}" class="active">{{ __('messages.Home')}}<br></a></li>
-            <li><a href="{{url('about')}}" class="{{ request()->is('about') ? 'active' : '' }}">{{__('messages.Work team')}}</a></li>
-            <li><a href="{{url('portfolio')}}">{{__('messages.Portfolio Manager')}}</a></li>
-            <li><a href="{{url('blog')}}"> {{__('messages.Daily blog')}}</a></li>
+              
+
+             <li class="dropdown"><a href="#"><span> user</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a rel="alternate"  hreflang="#" href="#"> </a></li>
+                <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
+              </ul>
+            </li>
+
+
+            <li class="dropdown"><a href="#"><span> اختيار المنهج</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a rel="alternate"  hreflang="#" href="{{route('flutter')}}"> flutter</a></li>
+                <li><a rel="alternate"  hreflang="#" href=" {{route('php')}}">php</a></li>
+                <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
+              </ul>
+            </li>
+             <li>
+
+
+              <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-outline-warning ">
+    <i class="bi bi-box-arrow-right"></i> {{ __('messages.Logout') }}
+         <form id="logout-form" action="{{ route('home') }}" method="POST" style="display: none;">
+    @csrf
+</form>
+</a>
            
-            <li><a href="#contact">{{__('messages.content')}}</a></li>
+                </li>
+           
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
         </div>
     </div>
-
     </x-slot>
+
+<div>dsdafhkjh</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </x-layout>

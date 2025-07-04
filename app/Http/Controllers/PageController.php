@@ -26,11 +26,7 @@ class PageController extends Controller
 
         return  view('pages.blog');
     }
-        public function dart()
-    {
-
-        return  view('pages.dart.index');
-    }
+    
           public function flutter()
     {
 

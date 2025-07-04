@@ -50,7 +50,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
                 <div class="icon"><img src="{{asset('logo/icons8-dart-96.png')}}" alt="" srcset=""></div>
-                <h4 class="title"><a href="{{url('dart')}}" class="stretched-link">Dart</a></h4>
+                <h4 class="title"><a href="{{route('home')}}" class="stretched-link">Dart</a></h4>
               </div>
             </div>
             
@@ -59,7 +59,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
                 <div class="icon"><img src="{{asset('logo/icons8-user-100.png')}}" alt="" srcset=""></div>
-                <h4 class="title"><a href="{{route('home')}}" class="stretched-link"> {{__('messages.Teaching')}}</a></h4>
+                <h4 class="title"><a href="{{route('login.index')}}" class="stretched-link"> {{__('messages.Teaching')}}</a></h4>
               </div>
             </div>
             
