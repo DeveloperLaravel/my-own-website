@@ -5,7 +5,8 @@
     </x-basis.navbar>
     </x-slot>
     <section id="hero" class="hero section accent-background"> 
-
+ 
+   
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-5 justify-content-between">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
@@ -23,7 +24,7 @@
           </div>
         </div>
       </div> 
-
+ 
        <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">
         <div class="container position-relative">
           <div class="row gy-4 mt-5">
@@ -58,7 +59,7 @@
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
                 <div class="icon"><img src="{{asset('logo/icons8-user-100.png')}}" alt="" srcset=""></div>
-                <h4 class="title"><a href="{{url('login')}}" class="stretched-link"> {{__('messages.Teaching')}}</a></h4>
+                <h4 class="title"><a href="{{route('home')}}" class="stretched-link"> {{__('messages.Teaching')}}</a></h4>
               </div>
             </div>
             

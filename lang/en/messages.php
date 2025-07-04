@@ -50,5 +50,11 @@ return [
     "email" => "Email",
     "Confirm" => "Confirm password",
     "up" => "Sign up",
+    "Logout" => "Logout",
+    "Home" => "Home",
+    "Home" => "Home",
+    "Home" => "Home",
+    "Home" => "Home",
+    "Home" => "Home",
     "Home" => "Home",
 ];

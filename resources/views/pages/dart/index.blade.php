@@ -4,8 +4,7 @@
 <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:hnarfr20063@gmail.com">hnarfr20063@gamil.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4" ><span dir='ltr'>+218 93 4890054</span></i>
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:hnarfr20063@gmail.com">{{$user->email}}</a></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
           <a href="https://github.com/DeveloperLaravel/" class="github"><i class="bi bi-github"></i></a>
@@ -17,7 +16,7 @@
     </div>
 
 <div class="branding d-flex align-items-cente">
-
+    
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
@@ -25,8 +24,8 @@
           <h1 class="sitename"> 
         Dart
         </h1>
-          <span>.</span>
         </a> 
+        
  
  <nav id="navmenu" class="navmenu">
           <ul>
@@ -38,12 +37,35 @@
                 <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
               </ul>
             </li>
-            <li><a href="{{url('/')}}" class="active">{{ __('messages.Home')}}<br></a></li>
-            <li><a href="{{url('about')}}" class="{{ request()->is('about') ? 'active' : '' }}">{{__('messages.Work team')}}</a></li>
-            <li><a href="{{url('portfolio')}}">{{__('messages.Portfolio Manager')}}</a></li>
-            <li><a href="{{url('blog')}}"> {{__('messages.Daily blog')}}</a></li>
+              
+
+             <li class="dropdown"><a href="#"><span> {{ $user->name}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a rel="alternate"  hreflang="#" href="#"> </a></li>
+                <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
+              </ul>
+            </li>
+
+
+            <li class="dropdown"><a href="#"><span> اختيار المنهج</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a rel="alternate"  hreflang="#" href="{{route('flutter')}}"> flutter</a></li>
+                <li><a rel="alternate"  hreflang="#" href=" {{route('php')}}">php</a></li>
+                <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
+              </ul>
+            </li>
+             <li>
+
+
+              <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-outline-warning ">
+    <i class="bi bi-box-arrow-right"></i> {{ __('messages.Logout') }}
+         <form id="logout-form" action="{{ route('home') }}" method="POST" style="display: none;">
+    @csrf
+</form>
+</a>
            
-            <li><a href="#contact">{{__('messages.content')}}</a></li>
+                </li>
+           
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

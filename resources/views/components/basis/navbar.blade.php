@@ -36,10 +36,10 @@
                 <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
               </ul>
             </li>
-            <li><a href="{{url('/')}}" class="active">{{ __('messages.Home')}}<br></a></li>
-            <li><a href="{{url('about')}}" class="{{ request()->is('about') ? 'active' : '' }}">{{__('messages.Work team')}}</a></li>
-            <li><a href="{{url('portfolio')}}">{{__('messages.Portfolio Manager')}}</a></li>
-            <li><a href="{{url('blog')}}"> {{__('messages.Daily blog')}}</a></li>
+            <li><a href="{{route('index')}}" class="active">{{ __('messages.Home')}}<br></a></li>
+            <li><a href="{{route('about')}}" class="{{ request()->is('about') ? 'active' : '' }}">{{__('messages.Work team')}}</a></li>
+            <li><a href="{{route('portfolio')}}">{{__('messages.Portfolio Manager')}}</a></li>
+            <li><a href="{{route('blog')}}"> {{__('messages.Daily blog')}}</a></li>
            
             <li><a href="#contact">{{__('messages.content')}}</a></li>
           </ul>
