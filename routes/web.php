@@ -25,7 +25,6 @@ Route::view('/register','auth.register')->name('register.index');
 Route::post('/register',[AuthController::class,'register'])->name('register');
 Route::view('/login','auth.login')->name('login.index');
 Route::post('/login',[AuthController::class,'login'])->name('login');
-Route::post('/logout',[AuthController::class,'logout']);
 
 
 
@@ -37,24 +36,22 @@ Route::post('/logout',[AuthController::class,'logout']);
 
 Route::get('/', [PageController::class,'index'])->name('index');
 
-Route::get('/flutter',[PageController::class,'flutter'])->name('flutter');
-Route::get('/laravel',[PageController::class,'php'])->name('php');
+
 // Route::get('/dart',[PageController::class,'dart'])->name('dart');
 
+
+
+Route::middleware('auth')->group(function () {
+   
 Route::get('/home', function () {
     return view('pages.dart.index');
 })->middleware('auth')->name('home');
 
+Route::get('/flutter',[PageController::class,'flutter'])->name('flutter');
+Route::get('/laravel',[PageController::class,'php'])->name('php');
 
-Route::post('/logout', function () {
-    Auth::logout();
-    request()->session()->invalidate();
-    request()->session()->regenerateToken();
-
-    return redirect(route('login.index'));
-})->name('logout');
-
-
+});
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
 Route::get('about', [PageController::class,'about'])->name('about');
 Route::get('portfolio',[PageController::class,'portfolio'])->name('portfolio');

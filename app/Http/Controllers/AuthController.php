@@ -90,11 +90,22 @@ class AuthController extends Controller
      */
     public function logout(Request $req)
     {
-        // $request->user()->currentAccessToken()->delete();
-        // return response()->json(['message'=>'تم تسجيل الخروج بنجاح'],200);
+        // حذف التوكن لو موجود (API فقط)
+    if ($req->user() && $req->user()->currentAccessToken()) {
+        $req->user()->currentAccessToken()->delete();
+    }
 
-         $req->user()->currentAccessToken()->delete();
-        return redirect()->route('login.index');
+    // لو كان الطلب API (JSON)
+    if ($req->wantsJson()) {
+        return response()->json(['message' => 'تم تسجيل الخروج بنجاح']);
+    }
+
+    // تسجيل الخروج من الجلسة (Web)
+    Auth::logout();
+    $req->session()->invalidate();
+    $req->session()->regenerateToken();
+
+    return redirect()->route('login.index');
     }
    
 }
