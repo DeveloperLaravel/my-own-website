@@ -11,26 +11,66 @@
         <div class="text-center mt-4 name">
             {{__('messages.up')}}
         </div>
-        <form class="p-3 mt-3" method="POST" action="{{ route('register') }}">
-                    @csrf
-            <div class="form-field d-flex align-items-center">
-                <span class="fa-solid fa-user p-2"></span>
-                <input type="text" name="name" id="userName" placeholder="{{__('messages.Username')}}" required>
-            </div>
-               <div class="form-field d-flex align-items-center">
-                <span class="fa-solid fa-envelope p-2"></span>
-                <input type="text" name="email" id="email" placeholder="{{__('messages.email')}}" required>
-            </div>
-            <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key p-2"></span>
-                <input type="password" name="password" id="pwd" placeholder="{{__('messages.password')}}" required>
-            </div>
-             <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key p-2"></span>
-                <input type="password" name="Confirm password" id="pwd" placeholder="{{__('messages.Confirm')}}">
-            </div>
-            <button type="submit" class="btn mt-3">{{__('messages.save')}}</button>
-        </form>
+        <x-form method="POST" action="{{ route('register') }}" class="p-3 mt-3">
+    <x-input
+        type="text"
+        name="name"
+        icon="fas fa-user"
+        placeholder="{{ __('messages.Username') }}"
+        required
+        autocomplete="name"
+    />
+    @error('name')
+        <div class="invalid-feedback d-block mb-4">
+            {{ $message }}
+        </div>
+    @enderror
+    <x-input
+        type="email"
+        name="email"
+        icon="far fa-envelope"
+        placeholder="{{ __('messages.email') }}"
+        required
+        autocomplete="email"
+    />
+     @error('email')
+        <div class="invalid-feedback d-block mb-4">
+            {{ $message }}
+        </div>
+    @enderror
+
+    <x-input
+        type="password"
+        name="password"
+        icon="fas fa-lock"
+        placeholder="{{ __('messages.password') }}"
+        required
+        autocomplete="new-password"
+    />
+      @error('password')
+        <div class="invalid-feedback d-block  mb-4 ">
+            {{ $message }}
+        </div>
+    @enderror
+
+    <x-input
+        type="password"
+        name="password_confirmation"
+        icon="fas fa-lock"
+        placeholder="{{ __('messages.Confirm') }}"
+        required
+        autocomplete="new-password"
+    />
+     @error('password_confirmation')
+        <div class="invalid-feedback d-block  mb-4">
+            {{ $message }}
+        </div>
+    @enderror
+
+    <button type="submit" class="btn mt-3 w-100">
+        {{ __('messages.register') }}
+    </button>
+</x-form>
     </div>
 </section>
 

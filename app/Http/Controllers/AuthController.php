@@ -18,7 +18,7 @@ class AuthController extends Controller
     public function register(Request $req)
     {
         
-         $req->validate(['name'=>'required','email'=>'required|email|unique:users','password'=>'required|min:6']);
+         $req->validate(['name'=>'required','email'=>'required|email|unique:users','password'=>'required|min:6|confirmed']);
         $user = User::create(['name'=>$req->name,'email'=>$req->email,'password'=>bcrypt($req->password)]);
         // $user->token = $user->createToken('api')->plainTextToken;
            $token = $user->createToken('api')->plainTextToken;
@@ -44,7 +44,7 @@ class AuthController extends Controller
         $req->validate(['email'=>'required|email','password'=>'required']);
         $user = User::where('email',$req->email)->first();
         if(!$user || !Hash::check($req->password, $user->password)) {
-            return back()->withErrors(['login'=>'بيانات غير صحيحة']);
+            return back()->withErrors(['login_error'=>__('messages.Incorrect')])->withInput($req->only('email'));
         }
         Auth::login($user);
 

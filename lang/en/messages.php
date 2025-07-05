@@ -56,7 +56,7 @@ return [
     "DARTprogramming" => "DART programming courses",
     "Flutterprogramming" => "Flutter programming courses",
     "Laravelprogramming" => "Laravel programming courses",
-    "Home" => "Home",
+    "Incorrect" => "Incorrect email or password",
     "Home" => "Home",
     "Home" => "Home",
 ];

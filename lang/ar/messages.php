@@ -55,7 +55,7 @@ return [
     "DARTprogramming" => "دورات برمجة DART",
     "Flutterprogramming" => "دورات برمجة Flutter",
     "Laravelprogramming" => "دورات برمجة Laravel",
-    "Home" => "الرئيسية",
+    "Incorrect" => "البريد الإلكتروني أو كلمة المرور غير صحيحة",
     "Home" => "الرئيسية",
     // 'welcome' => 'مرحبا بكم في موقعنا!',
 
