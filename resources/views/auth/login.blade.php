@@ -1,35 +1,11 @@
 <x-layout>
     @push('style')
 <link rel="stylesheet" href="{{asset('css.css')}}">
-    @endpush
-   <x-slot name="header">
-       <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:hnarfr20063@gmail.com">hnarfr20063@gamil.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4" ><span dir='ltr'>+218 93 4890054</span></i>
-        </div>
-    
-    
-<div class="branding d-flex align-items-cente">
- <nav id="navmenu" class="navmenu">
-          <ul>
-             <li class="dropdown"><a href="#"><span> {{ __('messages.language')}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                <li><a rel="alternate"  hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">  {{ $properties['native'] }}</a></li>
-                    @endforeach
-                <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
-              </ul>
-            </li>
-            
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 
-        </div>
-    </div>
-    </x-slot>
+    @endpush
+ 
+
     <section> 
 <div class="wrapper">
         <div class="logo">

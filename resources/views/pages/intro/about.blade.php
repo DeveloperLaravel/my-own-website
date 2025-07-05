@@ -1,9 +1,8 @@
 <x-layout>
  <x-slot name="header">
-    <x-basis.navbar>
-      
-    </x-basis.navbar>
+    <x-basis.navbar/>
     </x-slot>
+
  <section id="hero" class="hero section accent-background">
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-5 justify-content-between">
