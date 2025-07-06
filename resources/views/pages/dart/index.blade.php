@@ -16,10 +16,15 @@
 
         <div class="row gy-4">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h3>
+            <h3>{{__('messages.Simpledart')}}</h3>
             <img src="{{asset('code.png')}}" class="img-fluid rounded-4 mb-4" alt="">
-            <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
-            <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
+            <p>
+            {{__('messages.maindart')}}  
+          </p>
+            <p>
+            {{__('messages.voidDART')}}  
+          </p>
+          <p>{{__('messages.Insidedart')}}</p>
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
             <div class="content ps-0 ps-lg-5">
@@ -78,13 +83,12 @@
                  </li>   
               </ul>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                {{__('messages.thisdart')}}
               </p>
 
               <div class="position-relative mt-4">
-                <img src="{{asset('assets/img/about-2.jpg')}}" class="img-fluid rounded-4" alt="">
-                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+                <img src="{{asset('5.png')}}" class="img-fluid rounded-4" alt="">
+                <a href="https://www.youtube.com/watch?v=Pe7ZKQARUk4&list=PLXngueStmWn3a8kgGzV9MsKQH8nHbGIr6" class="glightbox pulsating-play-btn"></a>
               </div>
             </div>
           </div>
