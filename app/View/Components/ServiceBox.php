@@ -6,15 +6,19 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Layout extends Component
+class ServiceBox extends Component
 {
+    public $title;
+    public $image;
+    public $route;
     /**
      * Create a new component instance.
      */
-    
-    public function __construct()
+    public function __construct($title, $image, $route)
     {
-        //
+        $this->title = $title;
+        $this->image = $image;
+        $this->route = $route;
     }
 
     /**
@@ -22,6 +26,6 @@ class Layout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('layouts.master');
+        return view('components.service-box');
     }
 }

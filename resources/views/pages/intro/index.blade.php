@@ -1,6 +1,6 @@
 <x-layout>
    <x-slot name="header">
-    <x-basis.navbar/>
+    <x-basis.navbar  :title="__('messages.Study')"/>
     </x-slot>
 
 
@@ -17,16 +17,16 @@
           </h2>
           <p>{{ __('messages.introduction') }}</p>
           <div class="d-flex">
-            <a href="https://www.youtube.com/watch?v=C2E98BPV66s&list=PLXngueStmWn1rM0oy-ARQjUvJ6orLJTu0&index=12" class="glightbox btn-watch-video d-flex align-items-center">
+            <x-link  href="https://www.youtube.com/watch?v=C2E98BPV66s&list=PLXngueStmWn1rM0oy-ARQjUvJ6orLJTu0&index=12" class="glightbox btn-watch-video d-flex align-items-center">
               <i class="bi bi-play-circle"></i>
               <span>{{ __('messages.Watch') }}</span>
-            </a>
+            </x-link>
           </div>
         </div>
 
         <!-- Hero Image -->
         <div class="col-lg-5 order-1 order-lg-2">
-          <img src="assets/img/hero-img.svg" class="img-fluid" alt="">
+          <x-image  src="{{asset('assets/vendor/images/9.png')}}" class="img-fluid" alt="شعار الموقع" />
         </div>
       </div>
     </div>
@@ -37,52 +37,28 @@
         <div class="row gy-4 mt-5">
 
           <!-- Flutter Box -->
-          <div class="col-xl-3 col-md-6">
-            <div class="icon-box">
-              <div class="icon">
-                <img src="{{ asset('logo/icons8-flutter-logo-96.png') }}" alt="Flutter">
-              </div>
-              <h4 class="title">
-                <a href="{{ url('flutter') }}" class="stretched-link">Flutter</a>
-              </h4>
-            </div>
-          </div>
+         <x-service-box 
+          title="Flutter"
+          image="assets/vendor/images/logo/icons8-flutter-logo-96.png"
+          route="flutter"/>
 
           <!-- Laravel Box -->
-          <div class="col-xl-3 col-md-6">
-            <div class="icon-box">
-              <div class="icon">
-                <img src="{{ asset('logo/icons8-laravel-96.png') }}" alt="Laravel">
-              </div>
-              <h4 class="title">
-                <a href="{{ route('php') }}" class="stretched-link">Laravel</a>
-              </h4>
-            </div>
-          </div>
+         <x-service-box 
+            title="Laravel"
+            image="assets/vendor/images/logo/icons8-laravel-96.png"
+            route="php"/>
 
           <!-- Dart Box -->
-          <div class="col-xl-3 col-md-6">
-            <div class="icon-box">
-              <div class="icon">
-                <img src="{{ asset('logo/icons8-dart-96.png') }}" alt="Dart">
-              </div>
-              <h4 class="title">
-                <a href="{{ route('home') }}" class="stretched-link">Dart</a>
-              </h4>
-            </div>
-          </div>
+          <x-service-box 
+            title="Dart"
+            image="assets/vendor/images/logo/icons8-dart-96.png"
+            route="dart"/>
 
           <!-- Teaching Box -->
-          <div class="col-xl-3 col-md-6">
-            <div class="icon-box">
-              <div class="icon">
-                <img src="{{ asset('logo/icons8-user-100.png') }}" alt="User">
-              </div>
-              <h4 class="title">
-                <a href="{{ route('login.index') }}" class="stretched-link">{{ __('messages.Teaching') }}</a>
-              </h4>
-            </div>
-          </div>
+           <x-service-box 
+            :title="__('messages.Teaching')"
+            image="assets/vendor/images/logo/icons8-user-100.png"
+            route="home"/>
 
         </div>
       </div>

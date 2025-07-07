@@ -1,6 +1,6 @@
 <x-layout>
    <x-slot name="header">
-    <x-basis.navbar/>
+    <x-basis.navbar :title="__('messages.Study')"/>
     </x-slot>
 
     <x-basis.footer>

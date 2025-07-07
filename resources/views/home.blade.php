@@ -11,105 +11,49 @@
         <h2>{{__('messages.My studies')}}<br></h2>
         <p>
         {{__('messages.After')}}  
-</p>
-      </div><!-- End Section Title -->
+        </p>
+      </div>
+      <!-- End Section Title -->
 
 
 
      <!-- Blog Posts Section -->
     <section id="blog-posts" class="blog-posts section ">
-
       <div class="container">
         <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <article>
+          <x-post-card 
+    image="assets/vendor/images/1.webp"
+    :category="__('messages.Book')"
+    :title="__('messages.Specification')"
+    link="https://spec.dart.dev/DartLangSpecDraft.pdf"
+    author-image="assets/vendor/images/abbes.png"
+    :author-name="__('messages.abbes')"
+    date="2023-05-01"
+/>
+          <!-- End post list item -->
 
-              <div class="post-img">
-                <img src="{{asset('1.webp')}}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">{{__('messages.Book')}}</p>
-
-              <h2 class="title">
-                <a href="https://spec.dart.dev/DartLangSpecDraft.pdf">{{__('messages.Specification')}}</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{{asset('abbes.png')}}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">{{__('messages.abbes')}}</p>
-                  <p class="post-date">
-                    @php
-                       $created_at = \Carbon\Carbon::parse('2023-05-01'); 
-                     @endphp
-                    <time datetime="{{ $created_at->toDateString() }}"> {{ $created_at->diffForHumans() }}
-</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{{asset('2.jpg')}}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">{{__('messages.Book')}}</p>
-
-              <h2 class="title">
-                <a href="https://library.huree.edu.mn/data/202295/2024-06-03/beginning-app-development-with-flutter-978-1-4842-5181-2_compress.pdf">{{__('messages.Development')}}</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{{asset('abbes.png')}}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">{{__('messages.abbes')}}</p>
-                  <p class="post-date">
-                       @php
-                       $created_at = \Carbon\Carbon::parse('2024-01-12'); 
-                     @endphp
-                    <time datetime="{{ $created_at->toDateString() }}"> {{ $created_at->diffForHumans() }}
-</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{{asset('3.jpg')}}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">{{__('messages.Book')}}</p>
-
-              <h2 class="title">
-                <a href="https://www.pdfdrive.to/book/beginning-laravel-a-beginners-guide-to-application-development-with-laravel-53-0">{{__('messages.Beginning')}}</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{{asset('abbes.png')}}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">{{__('messages.abbes')}}</p>
-                  <p class="post-date">
- @php
-                       $created_at = \Carbon\Carbon::parse('2022-07-01'); 
-                     @endphp
-                    <time datetime="{{ $created_at->toDateString() }}"> {{ $created_at->diffForHumans() }}
-</time>                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
+         <x-post-card 
+    image="assets/vendor/images/2.jpg"
+    :category="__('messages.Book')"
+    :title="__('messages.Development')"
+    link="https://library.huree.edu.mn/data/202295/2024-06-03/beginning-app-development-with-flutter-978-1-4842-5181-2_compress.pdf"
+    author-image="assets/vendor/images/abbes.png"
+    :author-name="__('messages.abbes')"
+    date="2024-01-12"
+/>
+          
+          <!-- End post list item -->
+<x-post-card 
+    image="assets/vendor/images/3.jpg"
+    :category="__('messages.Book')"
+    :title="__('messages.Beginning')"
+    link="https://www.pdfdrive.to/book/beginning-laravel-a-beginners-guide-to-application-development-with-laravel-53-0"
+    author-image="assets/vendor/images/abbes.png"
+    :author-name="__('messages.abbes')"
+    date="2022-07-01"
+/>
+          <!-- End post list item -->
 
 
          

@@ -1,6 +1,6 @@
 <x-layout>
  <x-slot name="header">
-    <x-basis.navbar/>
+    <x-basis.navbar  :title="__('messages.Study')"/>
     </x-slot>
 
  <section id="hero" class="hero section accent-background">
@@ -9,15 +9,14 @@
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
             <h2><span>{{__('messages.Together')}} </span><span class="accent"> </span></h2>
             <p>
-{{__('messages.aboutint')}} 
-
+             {{__('messages.aboutint')}} 
             </p>
             <p>
               {{__('messages.about')}} 
 
           </div>
           <div class="col-lg-5 order-1 order-lg-2">
-            <img src="{{ asset('FB_IMG_1580732251590.jpg')}}" class="img-fluid" alt="">
+            <x-image src="{{ asset('assets/vendor/images/FB_IMG_1580732251590.jpg')}}" alt="شعار الموقع" class="img-fluid" />
           </div>
         </div>
       </div>

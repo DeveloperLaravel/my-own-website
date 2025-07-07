@@ -7,7 +7,7 @@
     <section>
         <div class="wrapper">
             <div class="logo">
-                <img src="{{ asset('logo/icons8-libya-48.png') }}" alt="logo">
+          <x-image  src="{{ asset('assets/vendor/images/logo/icons8-libya-48.png') }}" class="img-fluid" alt="شعار الموقع" />
             </div>
 
             <div class="text-center mt-4 name">
@@ -16,7 +16,7 @@
 
             <!-- {{-- ✅ عرض أخطاء التحقق --}} -->
         @if ($errors->has('login_error'))
-    <div class="alert alert-danger text-center mb-3">
+            <div class="alert alert-danger text-center mb-3">
         {{ $errors->first('login_error') }}
     </div>
 @endif
@@ -43,14 +43,13 @@
                     autocomplete="current-password"
                 />
   
-                <button type="submit" class="btn mt-3 w-100">
+                <x-button>
                     {{ __('messages.save') }}
-                </button>
-</x-form>
-
-            <div class="text-center fs-6 mt-3">
-                <a href="#">{{ __('messages.Forgotpassword') }}</a> {{ __('messages.or') }}
-                <a href="{{ route('register.index') }}">{{ __('messages.Signup') }}</a>
+                </x-button>
+            </x-form>
+                <div class="text-center fs-6 mt-3">
+                <x-link  href="#" >{{ __('messages.Forgotpassword') }} </x-link>
+                {{ __('messages.or') }} <x-link  href="{{ route('register.index') }}" >{{ __('messages.Signup') }}</x-link>
             </div>
 
             

@@ -6,7 +6,7 @@
     <section>
 <div class="wrapper">
         <div class="logo">
-            <img src="{{asset('logo/icons8-libya-48.png')}}" alt="">
+          <x-image  src="{{ asset('assets/vendor/images/logo/icons8-libya-48.png') }}" class="img-fluid" alt="شعار الموقع" />
         </div>
         <div class="text-center mt-4 name">
             {{__('messages.up')}}
@@ -66,10 +66,9 @@
             {{ $message }}
         </div>
     @enderror
-
-    <button type="submit" class="btn mt-3 w-100">
+    <x-button>
         {{ __('messages.register') }}
-    </button>
+    </x-button>
 </x-form>
     </div>
 </section>

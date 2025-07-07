@@ -6,8 +6,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-          </a>
+            <x-link href="https://www.facebook.com/basbwhlyqh/" class="logo d-flex align-items-center"></x-link>
           <p>
          {{__('messages.communication')}}
           </p>
@@ -17,13 +16,14 @@
           </p>
           
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-github"></i></a>
-            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <x-link href="https://www.facebook.com/basbwhlyqh/"><i class="bi bi-facebook"></i></x-link>
+            <x-link href=""><i class="bi bi-instagram"></i></x-link>
+            <x-link href="https://github.com/DeveloperLaravel"><i class="bi bi-github"></i></x-link>
+            <x-link href=""><i class="bi bi-twitter"></i></x-link>
           <!-- Uncomment the line below if you also wish to use an image logo -->
            <i  class="logo d-flex align-items-center">
-             <img src="{{asset('abbes.png')}}"  alt="">
+            <x-image src="{{asset('assets/vendor/images/abbes.png')}}" alt="شعار الموقع" class="img-fluid" />
+
 </i>
           </div>
         </div>
@@ -32,48 +32,29 @@
           <h4> 
             {{__('messages.web')}}
           </h4>
-          <ul>
-            <li><a href="{{url('/')}}">{{ __('messages.Home')}}</a></li>
-            <li><a href="{{url('portfolio')}}"> {{__('messages.Portfolio Manager')}}</a></li>
-            <li><a href="{{url('blog')}}"> {{__('messages.Daily blog')}}</a></li>
-            <li><a href="#">  {{__('messages.content')}} </a></li>
-            <li><a href="{{url('about')}}">{{__('messages.Work team')}}</a></li>
-          </ul>
+            <x-ul>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/">{{ __('messages.Home')}}</x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> {{__('messages.Portfolio Manager')}}</x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> {{__('messages.Daily blog')}} </x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> {{__('messages.content')}} </x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/">{{__('messages.Work team')}} </x-link></li>
+            </x-ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>
             {{__('messages.services')}}
           </h4>
-          <ul>
-            <li><a href="#">
-            {{__('messages.website')}}  
-            </a></li>
-            <li><a href="#">
-                        {{__('messages.development')}}  </a></li>
-            <li><a href="#">
-             {{__('messages.UI')}} 
-            </a></li>
-            <li><a href="#">
-
-
-            {{__('messages.State')}} 
-            </a></li>
-            <li><a href="#">
-                        {{__('messages.Clean')}} 
-
-            </a></li>
-            <li><a href="#">PHP  Json
-
-            </a></li>
-            <li><a href="#">PHP  Data Mysql
-
-
-            </a></li>
-            <li><a href="#">Flutter  Data Firebase
-
-            </a></li>
-          </ul>
+            <x-ul>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> {{__('messages.website')}} </x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> {{__('messages.development')}} </x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> {{__('messages.UI')}} </x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> {{__('messages.State')}} </x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> {{__('messages.Clean')}} </x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> PHP  Json </x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> PHP  Data Mysql </x-link></li>
+              <li><x-link href="https://www.facebook.com/basbwhlyqh/"> Flutter  Data Firebase</x-link></li>
+            </x-ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">

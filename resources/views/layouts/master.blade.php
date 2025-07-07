@@ -16,7 +16,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link href="{{asset('logo/icons8-libya-48.png')}}" rel="icon">
+  <link href="{{asset('assets/vendor/images/logo/icons8-libya-48.png')}}" rel="icon">
   <link href="{{asset('logo/icons8-libya-48.png')}}" rel="apple-touch-icon">
 
   <!-- Fonts -->

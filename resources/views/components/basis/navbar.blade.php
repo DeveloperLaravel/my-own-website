@@ -4,7 +4,7 @@
   'showCourseDart' => false,
   'showCourseFlutter' => false,
   'showCourseLaravel' => false,
-   'logo' => 'logo/icons8-libya-48.png',
+   'logo' => 'assets/vendor/images/logo/icons8-libya-48.png',
    'title' => null,
 
 ])
@@ -14,9 +14,9 @@
         <div class="contact-info d-flex align-items-center">
           <i class="bi bi-envelope d-flex align-items-center">
     @auth
-  <a href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a>
+    <x-link href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</x-link>
   @else
-    <a href="mailto:hnarfr20063@gmail.com">hnarfr20063@gmail.com</a>
+  <x-link href="mailto:hnarfr20063@gmail.com">hnarfr20063@gmail.com</x-link>
   @endauth
           
           </i>
@@ -25,10 +25,11 @@
           @endguest
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
-          <a href="https://github.com/DeveloperLaravel/" class="github"><i class="bi bi-github"></i></a>
-          <a href="https://www.facebook.com/basbwhlyqh/" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <x-link href="https://www.facebook.com/basbwhlyqh/" ><i class="bi bi-facebook"></i></x-link>
+            <x-link href=""><i class="bi bi-instagram"></i></x-link>
+            <x-link href="https://github.com/DeveloperLaravel"><i class="bi bi-github"></i></x-link>
+            <x-link href=""><i class="bi bi-twitter"></i></x-link>
+            <x-link href=""><i class="bi bi-linkedin"></i></x-link>
         </div>
       </div>
     </div>
@@ -36,88 +37,142 @@
 <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="{{ asset($logo)}}" alt="">
-          <h1 class="sitename"> 
-           {{ $title }}
-        </h1>
-          <span>.</span>
-        </a> 
+          <x-link href="{{route('index')}}" class="logo d-flex align-items-center">
+              <!-- Uncomment the line below if you also wish to use an image logo -->
+              <x-image src="{{asset($logo)}}" alt="شعار الموقع" />
+              
+              <h1 class="sitename "> 
+                {{ $title }}
+              </h1>
+              <span>.</span>
+            </x-link>
+
+
+
  
  <nav id="navmenu" class="navmenu">
-          <ul>
-             <li class="dropdown"><a href="#"><span> {{ __('messages.language')}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
+         <x-ul>
+              <li class="dropdown"><x-link href="https://www.facebook.com/basbwhlyqh/"> <span> {{ __('messages.language')}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></x-link>
+              <x-ul>
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                <li><a rel="alternate"  hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">  {{ $properties['native'] }}</a></li>
+                <li>
+                  <x-link  hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</x-link>
+                </li>
                     @endforeach
                 <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
-              </ul>
+              </x-link>
             </li>
 
  <!-- {{-- روابط عامة --}} -->
    @guest
-            <li><a href="{{route('index')}}" class="active">{{ __('messages.Home')}}<br></a></li>
-            <li><a href="{{route('about')}}" class="{{ request()->is('about') ? 'active' : '' }}">{{__('messages.Work team')}}</a></li>
-            <li><a href="{{route('portfolio')}}">{{__('messages.Portfolio Manager')}}</a></li>
-            <li><a href="{{route('blog')}}"> {{__('messages.Daily blog')}}</a></li>
-            <li><a href="#contact">{{__('messages.content')}}</a></li>
+            <li>
+              <x-link href="{{route('index')}}"> {{ __('messages.Home')}} <br></x-link>
+            </li>
+            <li>
+              <x-link href="{{route('about')}}" class="{{ request()->is('about') ? 'active' : '' }}"> {{__('messages.Work team')}}</x-link>
+            </li>
+            <li>
+              <x-link href="{{route('portfolio')}}"> {{__('messages.Portfolio Manager')}}</x-link>
+            </li>
+            <li>
+              <x-link href="{{route('blog')}}"> {{__('messages.Daily blog')}}</x-link>
+            </li>
+            <li>
+              <x-link href="{{route('blog')}}"> {{__('messages.content')}}</x-link>
+            </li>
 @endguest
 
    <!-- {{-- روابط حسب حالة المستخدم --}} -->
      @auth
      
     @if ($showCourseHome)
-         <li><a href="{{ route('dart') }}">Dart</a></li>
-       <li><a href="{{ route('flutter') }}">Flutter</a></li>
-       <li><a href="{{ route('php') }}">Laravel</a></li>
+         <li>
+          <x-link href="{{route('dart')}}"> Dart</x-link>
+        </li>
+       <li>
+        <x-link href="{{route('flutter')}}"> Flutter</x-link>
+      </li>
+       <li>
+          <x-link href="{{route('php')}}"> Laravel</x-link>
+      </li>
     @endif
        @if ($showCourseDart)
-          <li class="dropdown"><a href="#"><span> المنهج</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-<li><a href="{{ route('flutter') }}">Flutter</a></li>
-       <li><a href="{{ route('php') }}">Laravel</a></li>
-              </ul>
+          <li class="dropdown">
+            <x-link href="#"><span> المنهج</span> <i class="bi bi-chevron-down toggle-dropdown"></i></x-link>
+          <x-ul>
+<li>
+  <x-link href="{{ route('flutter') }}">Flutter </x-link>
+</li>
+       <li>
+          <x-link href="{{ route('php') }}">Laravel </x-link>
+</li>
+               </x-ul>
             </li>
     @endif
        @if ($showCourseFlutter)
-       <li class="dropdown"><a href="#"><span> المنهج</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-         <li><a href="{{ route('dart') }}">Dart</a></li>
-       <li><a href="{{ route('php') }}">Laravel</a></li>
-              </ul>
+       <li class="dropdown">
+         <x-link href="#"><span> المنهج</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+        </x-link>
+              <x-ul>
+         <li>
+          <x-link href="{{ route('dart') }}">
+         Dart</x-link>
+        </li>
+       <li>
+        <x-link href="{{ route('php') }}">Laravel
+        </x-link>
+      </li>
+               </x-ul>
             </li>
     @endif
        @if ($showCourseLaravel)
-      <li class="dropdown"><a href="#"><span>المنهج</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-         <li><a href="{{ route('dart') }}">Dart</a></li>
-     <li><a href="{{ route('flutter') }}">Flutter</a></li>
-              </ul>
+      <li class="dropdown">
+        <x-link href="#"><span>المنهج</span> <i class="bi bi-chevron-down toggle-dropdown"></i> </x-link>
+               <x-ul>
+         <li>
+          <x-link href="{{ route('dart') }}">Dart
+          </x-link>
+        </li>
+     <li>
+       <x-link href="{{ route('flutter') }}">Flutter
+      <a href="{{ route('flutter') }}">
+ </x-link>
+    </li>
+</x-ul>
             </li>
     @endif
           <li>
-       <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+      <x-link href="#"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <i class="bi bi-box-arrow-right"></i> 
-      </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    </x-link>
+                    <x-form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
-                        </form>
+                        </x-form>
+
                     </li>
 
            @else
-            <li class="dropdown"><a href="#"><span> {{ __('messages.Open')}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                   <li><a href="{{ route('login.index') }}">{{ __('messages.Login') }}</a></li>
-                   <li><a href="{{ route('register.index') }}">{{ __('messages.register') }}</a></li>
+            <li class="dropdown">
+              <x-link href="#"><span> {{ __('messages.Open')}}</span> <i class="bi bi-chevron-down toggle-dropdown"></i> </x-link>
+              <x-ul>
+                   <li>
+                    <x-link href="{{ route('login.index') }}">
+                      {{ __('messages.Login') }}
+                     </x-link>
+                  </li>
+                   <li>
+                     <x-link href="{{ route('register.index') }}">
+{{ __('messages.register') }}
+                     </x-link>
+                  </li>
                 <!-- <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">انجليزى</a></li> -->
-              </ul>
+               </x-ul>
             </li>
                
 
  @endauth
-          </ul>
+
+           </x-ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 

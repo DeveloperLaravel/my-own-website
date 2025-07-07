@@ -6,15 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Layout extends Component
+class LessonSection extends Component
 {
+    public $items;
     /**
      * Create a new component instance.
      */
-    
-    public function __construct()
+    public function __construct($items = [])
     {
-        //
+        $this->items = $items;
     }
 
     /**
@@ -22,6 +22,6 @@ class Layout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('layouts.master');
+        return view('components.lesson-section');
     }
 }
